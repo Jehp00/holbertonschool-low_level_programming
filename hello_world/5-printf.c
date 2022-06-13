@@ -1,9 +1,7 @@
 #include <stdio.h>
-
 /**
- * main - prints something following a new linw
- *
- * return: 0
+ * main - prints a message
+ * Return: Always 0
  */
 
 int main(void)

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints exactly text following a new line
+ * main - prints something following a new linw
  *
  * return: 0
  */

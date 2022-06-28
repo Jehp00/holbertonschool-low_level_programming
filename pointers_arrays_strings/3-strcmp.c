@@ -10,25 +10,14 @@
 
 int _strcmp(char *s1, char *s2)
 {
-int c = 0;
-
-int b = 15;
-int d = -15;
-while (s2[c] != '\0')
+while (*s1 == *s2)
 {
-if (s2[c] > s1[c])
-{
-return (d);
-}
-else if (s2[c] < s1[c])
-{
-return (b);
-}
-else
+if (*s1 == '\0')
 {
 return (0);
 }
-c++;
+s1++;
+s2++;
 }
-return (0);
+return (*s1 - *s2);
 }

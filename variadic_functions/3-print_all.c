@@ -10,9 +10,9 @@
  * Return: void
  */
 
-void print_c(va_list c)
+void print_c(va_list c, char *separator)
 {
-	printf("%c", va_arg(c, int));
+	printf("%s%c", separator, va_arg(c, int));
 }
 
 /**
@@ -22,14 +22,15 @@ void print_c(va_list c)
  * Return: void
  */
 
-void print_s(va_list s)
+void print_s(va_list s, char *separator)
 {
-	char *string = va_arg(s, char*);
+	char *string;
 
+	string = va_arg(s, char *);
 	if (string == NULL)
 		string = "(nil)";
 
-	printf("%s", string);
+	printf("%s%s", separator, string);
 }
 /**
  * print_i - prints an int
@@ -38,9 +39,9 @@ void print_s(va_list s)
  * Return: void
  */
 
-void print_i(va_list i)
+void print_i(va_list i, char *s)
 {
-	printf("%d", va_arg(i, int));
+	printf("%s%d", s, va_arg(i, int));
 }
 
 /**
@@ -50,9 +51,9 @@ void print_i(va_list i)
  * Return: void
  */
 
-void print_f(va_list f)
+void print_f(va_list f, char *separator)
 {
-	printf("%f", va_arg(f, double));
+	printf("%s%f", separator, va_arg(f, double));
 }
 
 /**
@@ -64,8 +65,10 @@ void print_f(va_list f)
 
 void print_all(const char * const format, ...)
 {
+	va_list list;
 	unsigned int a, b;
-	print_t p[] = {
+	char *separator;
+	print_t st[] = {
 
 		{"c", print_c},
 		{"s", print_s},
@@ -73,27 +76,25 @@ void print_all(const char * const format, ...)
 		{"f", print_f},
 		{NULL, NULL}
 	};
-	va_list list;
-	char *separator;
 
 	va_start(list, format);
+	separator = "";
+
 	a = 0;
-	while (format && format[a])
+	while (format != NULL && format[a] != '\0')
 	{
 		b = 0;
-		while (p[b].t != NULL)
+		while (b < 4)
 		{
-			if (*(p[b].t) == format[a])
+			if (format[a] == *(st[b]).st)
 			{
-				printf("%s", separator);
-				p[b].f(list);
+				st[b].p(list, separator);
 				separator = ", ";
-				break;
 			}
 			b++;
 		}
 		a++;
 	}
-	va_end(list);
 	printf("\n");
+	va_end(list);
 }

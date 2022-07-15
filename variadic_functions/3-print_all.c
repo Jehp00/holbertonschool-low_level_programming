@@ -6,7 +6,7 @@
 /**
  * print_c - print a char
  * @c: char to print
- *
+ * @separator: separator of values
  * Return: void
  */
 
@@ -18,7 +18,7 @@ void print_c(va_list c, char *separator)
 /**
  * print_s - prints a string
  * @s: string to print
- *
+ * @separator: separator of values
  * Return: void
  */
 
@@ -35,19 +35,19 @@ void print_s(va_list s, char *separator)
 /**
  * print_i - prints an int
  * @i: int to print
- *
+ * @separator: separator of values
  * Return: void
  */
 
-void print_i(va_list i, char *s)
+void print_i(va_list i, char *separator)
 {
-	printf("%s%d", s, va_arg(i, int));
+	printf("%s%d", separator, va_arg(i, int));
 }
 
 /**
  * print_f - prints a float
  * @f: float to print
- *
+ * @separator: separator of values
  * Return: void
  */
 

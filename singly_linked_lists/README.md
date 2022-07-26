@@ -3,7 +3,8 @@ Singly linked lists
 * Task-0: print all the elemnts of a linked list that come of the structure node and return the number
 of nodes printed.
 
-* Task-1: 
+* Task-1: Write a function that returns the number of elements in a linked list-t list.
+
 * Task-2:
 * Task-3:
 * Task-4:

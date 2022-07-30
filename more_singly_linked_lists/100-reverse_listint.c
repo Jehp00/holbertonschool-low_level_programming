@@ -5,6 +5,7 @@
 * @head: A double to the head node of the input list
 * Return: The pointer to the head of the reversed list.
 */
+
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *previous = NULL;

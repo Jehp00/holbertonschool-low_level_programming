@@ -8,7 +8,6 @@
  *
  * Return: 1 if works, -1 if error
  */
-
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int a;

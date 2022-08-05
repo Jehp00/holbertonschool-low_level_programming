@@ -12,7 +12,7 @@
  * Return: Always 0 (Success)
  */
 
-int copy_cont(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int f_read, f_write, r, i, j;
 	char buff[BUFSIZ];

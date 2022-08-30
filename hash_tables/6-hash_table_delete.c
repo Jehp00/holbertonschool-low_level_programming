@@ -18,7 +18,6 @@ void _free_l(hash_node_t *head)
 		free(head);
 		head = curent;
 	}
-
 }
 
 /**
@@ -37,7 +36,7 @@ void hash_table_delete(hash_table_t *ht)
 	}
 	for (a = 0; a < ht->size; a++)
 	{
-		_free_l(ht->array[a]);	
+		_free_l(ht->array[a]);
 	}
 	free(ht->array);
 	free(ht);
